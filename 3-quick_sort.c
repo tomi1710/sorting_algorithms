@@ -34,6 +34,7 @@ void quick_sortt(int *A, int lo, int hi)
  * @A: array
  * @lo: low
  * @hi: high
+ * Return: a
  */
 int partition(int *A, int lo, int hi)
 {
@@ -51,7 +52,7 @@ int partition(int *A, int lo, int hi)
 	return (i);
 }
 /**
- * quick_sortt - sorts using quick sort algorithm
+ * _swap - sorts using quick sort algorithm
  * @A: array
  * @b: position to swap
  * @a: position to swap
