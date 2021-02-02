@@ -10,7 +10,8 @@ void quick_sortt(int *A, int lo, int hi);
  */
 void quick_sort(int *array, size_t size)
 {
-	quick_sortt(array, 0, size - 1);
+	if (size > 1)
+		quick_sortt(array, 0, size - 1);
 }
 /**
  * quick_sortt - sorts using quick sort algorithm
