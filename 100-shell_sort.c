@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * shell_sort - sorts an array using the shell sort method
+ * @array:array to sort
+ * @siz: size of array
+ */
 void shell_sort(int *array, size_t siz)
 {
 	int interval = 1, i, aux, a, size = siz;
@@ -13,7 +18,7 @@ void shell_sort(int *array, size_t siz)
 		i = interval;
 		a = 0;
 
-		while (a != 50)
+		while (a != 500)
 		{
 			if (array[i] < array[i - interval])
 			{
