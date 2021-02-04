@@ -16,6 +16,7 @@ void shell_sort(int *array, size_t siz)
 	while (interval >= 1)
 	{
 		i = interval;
+		count = interval;
 		a = 0;
 
 		while (a == 0)
@@ -33,8 +34,8 @@ void shell_sort(int *array, size_t siz)
 				a = 1;
 			if (i == size)
 			{
-				i = 0;
-				count = 0;
+				i = interval;
+				count = interval;
 			}
 		}
 		print_array(array, size);
