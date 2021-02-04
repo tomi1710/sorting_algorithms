@@ -1,30 +1,32 @@
 #include "sort.h"
 
-void shell_sort(int *array, size_t n)
+void shell_sort(int *array, size_t siz)
 {
-	int interval, count = 0, count2 = 0, i, aux, len;
+	int interval = 1, i, aux, a, size = siz;
 
-	for (len = 0; array[len]; len++)
-	{
-	}
+	while (interval < size)
+		interval = (interval * 3) + 1;
+	interval = (interval - 1) / 3;
 
-	while (count == 0)
+	while (interval >= 1)
 	{
-		interval = (n * 3) + 1;
-		count2 = 0;
-		while (count2 == 0)
+		i = interval;
+		a = 0;
+
+		while (a != 50)
 		{
-			for (i = interval - 1; array[i] <= len; i++)
+			if (array[i] < array[i - interval])
 			{
-				if (array[i] < array[i - interval])
-				{
-					aux = array[i];
-					array[i] = array[i - interval];
-					array[i - interval] = aux;
-					print_array(array, len);
-				}
+				aux = array[i];
+				array[i] = array[i - interval];
+				array[i - interval] = aux;
 			}
-			count2 = 1;
+			i = i + 1;
+			if (i == size)
+				i = 0;
+			a = a + 1;
 		}
+		print_array(array, size);
+		interval = (interval - 1) / 3;
 	}
 }
