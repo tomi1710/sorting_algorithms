@@ -7,7 +7,7 @@
  */
 void shell_sort(int *array, size_t siz)
 {
-	int interval = 1, i, aux, a, size = siz;
+	int interval = 1, i, aux, a, size = siz, count = 0;
 
 	while (interval < size)
 		interval = (interval * 3) + 1;
@@ -18,7 +18,7 @@ void shell_sort(int *array, size_t siz)
 		i = interval;
 		a = 0;
 
-		while (a != 500)
+		while (a == 0)
 		{
 			if (array[i] < array[i - interval])
 			{
@@ -26,10 +26,16 @@ void shell_sort(int *array, size_t siz)
 				array[i] = array[i - interval];
 				array[i - interval] = aux;
 			}
+			else
+				count = count + 1;
 			i = i + 1;
+			if (count == size)
+				a = 1;
 			if (i == size)
+			{
 				i = 0;
-			a = a + 1;
+				count = 0;
+			}
 		}
 		print_array(array, size);
 		interval = (interval - 1) / 3;
